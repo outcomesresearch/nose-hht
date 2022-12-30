@@ -11,7 +11,7 @@ export default {
   [keys.SCORE_ONLY_IN_ENGLISH]:
     'Score interpretation is temporarily only available in English',
   [keys.HEADER_TITLE]:
-    'Nasal Outcome Score for Epistaxis in Hereditary Hemorrhagic  Telangiectasia (NOSE HHT)',
+    'Nasal Outcome Score for Epistaxis in Hereditary Hemorrhagic Telangiectasia (NOSE HHT)',
   [keys.HEADER_BODY_1]:
     'Below you will find a list of physical, functional, and emotional consequences of your nosebleeds. We would like to know more about these problems and would appreciate you answering the following questions to the best of your ability. There are no right or wrong answers, as your responses are unique to you. Please rate your problems as they have been over',
   [keys.HEADER_BODY_2]: 'the past two weeks.',
