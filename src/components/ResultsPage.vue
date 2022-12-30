@@ -2,7 +2,7 @@
   <v-stepper-content step="2">
     <v-card class="past-scores">
       <v-container class="container-override">
-        <v-card-title class="text-h5">
+        <v-card-title class="text-h5 wrappable-title">
           {{ t(k.RESULTS_TITLE) }}{{ valid_email }}
         </v-card-title>
         <v-card-text style="padding: 0px;" v-if="internalData.length">
@@ -108,4 +108,8 @@ export default {
 
 <style scoped lang="scss">
 @import '../assets/scss/stepStyle.scss';
+
+#app .wrappable-title {
+  word-break: break-word;
+}
 </style>
