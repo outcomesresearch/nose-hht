@@ -15,7 +15,12 @@
           <div class="button-container">
             <v-btn text @click="$emit('step-change', 1)">{{ t(k.BACK) }}</v-btn>
             <v-spacer></v-spacer>
-            <v-btn text @click="addData" :disabled="!canAddNewScore">
+            <v-btn
+              text
+              @click="addData"
+              :disabled="!canAddNewScore || addNewScore_processing"
+              :loading="addNewScore_processing"
+            >
               {{ t(k.ADD_DATA) }}
             </v-btn>
             <v-spacer></v-spacer>
@@ -24,7 +29,12 @@
         </v-card-actions>
         <v-card-actions class="show-on-mobile">
           <div class="button-container">
-            <v-btn text @click="addData" :disabled="!canAddNewScore">
+            <v-btn
+              text
+              @click="addData"
+              :disabled="!canAddNewScore || addNewScore_processing"
+              :loading="addNewScore_processing"
+            >
               {{ t(k.ADD_DATA) }}
             </v-btn>
             <v-btn text @click="$emit('step-change', 1)">{{ t(k.BACK) }}</v-btn>
@@ -39,10 +49,10 @@
 <script>
 import Chart from './Chart.vue';
 import { mapGetters } from 'vuex';
-import { addUserData } from '../services/firebase';
+import { addUserData, signUp, getUserData } from '../services/firebase';
 
 export default {
-  props: ['valid_email', 'past_entries'],
+  props: ['valid_email', 'past_entries', 'actionOnSuccess'],
   components: { Chart },
   computed: {
     ...mapGetters(['getSum', 'getAverage', 'getQuestionnaireComplete']),
@@ -59,12 +69,23 @@ export default {
       var d = new Date().setUTCHours(0, 0, 0, 0); // midnight on current day in UTC time
       return this.internalData[this.internalData.length - 1].date < d;
     },
-    addData() {
-      addUserData(this.valid_email, {
+    async addData() {
+      const payload = {
         date: Date.now(), // set score to current UTC timestamp
         sumScore: this.getSum || 0.0001, // if zero, set to small score
         averageScore: this.getAverage || 0.0001, // if zero, set to small score,
-      });
+      };
+      try {
+        this.addNewScore_processing = true;
+        if (!this.internalData.length) {
+          // This is an account with no prior scores
+          const uid = await signUp(this.valid_email);
+          await addUserData(payload); // add data first, then pull from database
+          if (uid) getUserData(uid, this.actionOnSuccess);
+        } else await addUserData(payload);
+      } finally {
+        this.addNewScore_processing = false;
+      }
     },
   },
   watch: {
@@ -79,6 +100,7 @@ export default {
   data() {
     return {
       internalData: [],
+      addNewScore_processing: false,
     };
   },
 };
