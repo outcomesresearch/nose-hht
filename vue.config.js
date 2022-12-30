@@ -10,7 +10,7 @@ const webpackParams = {
 };
 
 module.exports = {
-  publicPath: process.env.NODE_ENV === 'production' ? '/nose-hht-dev/' : '/',
+  publicPath: process.env.NODE_ENV === 'production' ? '/nose-hht/' : '/',
   transpileDependencies: ['vuetify'],
   chainWebpack: (config) => {
     config.plugin('html').tap((args) => {
