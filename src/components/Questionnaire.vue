@@ -107,6 +107,7 @@
         <p class="mb-0 grey--text text--darken-3">
           {{ t(k.INTERPRETATION_2) }}
         </p>
+        <PastScoresModal :smallSize="isSmallWidth" />
       </v-card-text>
     </v-card>
   </div>
@@ -116,6 +117,7 @@
 import keys from '../assets/locales/keys';
 import HeaderCard from './HeaderCard';
 import ResultsTable from './ResultsTable';
+import PastScoresModal from './PastScoresModal';
 
 const BREAKPOINT = 700;
 
@@ -134,7 +136,7 @@ const SECTION3_PROMPTS = getMatchingKeys('SECTION3_PROMPT');
 const SECTION3_OPTIONS = getMatchingKeys('SECTION3_OPTION');
 
 export default {
-  components: { HeaderCard, ResultsTable },
+  components: { HeaderCard, ResultsTable, PastScoresModal },
   methods: {
     handleStepChange(indexInSection, section) {
       // On first questions of steps 2 and 3, validate previous section's answers
@@ -183,6 +185,12 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.past-score-container {
+  grid-template-columns: min-content;
+  align-items: center;
+  justify-content: center;
+}
+
 .v-radio:not(:last-child) {
   margin-right: 16px;
 }

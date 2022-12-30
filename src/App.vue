@@ -24,23 +24,20 @@ export default {
 
 <style lang="scss">
 @import './assets/scss/breakpoints.scss';
+@import './assets/scss/c3.scss';
+// @import './assets/scss/tooltip.scss';
 
 #app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  text-align: left;
 
-  tbody tr:hover {
-    background-color: transparent !important;
-  }
-  th:first-child,
-  td:first-child {
-    padding-left: 0px !important;
+  .grid {
+    display: grid;
   }
 
-  th:last-child,
-  td:last-child {
-    padding-right: 0px !important;
+  .v-overlay--active {
+    touch-action: none;
   }
 
   .v-card__text {
@@ -49,6 +46,15 @@ export default {
 
   .v-text-field__details {
     display: none;
+  }
+
+  .v-card__actions {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .past-scores .v-text-field__details {
+    display: flex;
   }
 
   .v-stepper__label {

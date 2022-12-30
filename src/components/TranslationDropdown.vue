@@ -26,6 +26,9 @@
 </template>
 
 <script>
+import * as d3 from 'd3';
+import dateTimeLocales from '../assets/dateTimeLocales/';
+
 const countries = [
   {
     name: 'en_us',
@@ -69,6 +72,8 @@ const countries = [
 export default {
   methods: {
     changeLanguage(newLanguage) {
+      d3.timeFormatDefaultLocale(dateTimeLocales[newLanguage.name]);
+      d3.formatDefaultLocale(dateTimeLocales[newLanguage.name]);
       this.selected = newLanguage;
       this.$vuetify.lang.current = newLanguage.name;
     },

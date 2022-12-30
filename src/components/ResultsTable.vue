@@ -26,7 +26,7 @@
           class="text-center"
           :class="allFieldsHaveValues ? `showOutlines` : ''"
         >
-          <tr class="mild">
+          <tr class="Mild">
             <td class="text-left">{{ t(k.INTERPRETATION_MILD) }}</td>
             <td>
               <div :class="isMild({ sum }).sum && `outline`">
@@ -39,7 +39,7 @@
               </div>
             </td>
           </tr>
-          <tr class="moderate">
+          <tr class="Moderate">
             <td class="text-left">{{ t(k.INTERPRETATION_MODERATE) }}</td>
             <td>
               <div :class="isModerate({ sum }).sum && `outline`">
@@ -52,7 +52,7 @@
               </div>
             </td>
           </tr>
-          <tr class="severe">
+          <tr class="Severe">
             <td class="text-left">{{ t(k.INTERPRETATION_SEVERE) }}</td>
             <td>
               <div :class="isSevere({ sum }).sum && `outline`">
@@ -103,6 +103,9 @@ export default {
         if (this.allFieldsHaveValues) {
           this.sum = this.calculateSum();
           this.average = this.calculateAverage();
+          this.$store.dispatch('SET_QUESTIONNAIRECOMPLETE', true);
+          this.$store.dispatch('SET_AVERAGE', this.average);
+          this.$store.dispatch('SET_SUM', this.sum);
         }
       },
       deep: true,
@@ -119,6 +122,7 @@ export default {
 
 <style scoped lang="scss">
 @import '../assets/scss/breakpoints.scss';
+@import "../assets/scss/colors.scss";
 
 /* Table styles  */
 .showOutlines .outline {
@@ -129,22 +133,26 @@ export default {
   padding: 4px;
 }
 
-.mild .outline {
-  border-color: #ffec19 !important;
-  -webkit-box-shadow: 0px 0px 2px #ffec19, inset 0px 0px 2px #ffec19;
-  box-shadow: 0px 0px 2px #ffec19, inset 0px 0px 2px #ffec19;
+@each $name, $hex in $colors {
+  .#{$name} .outline {
+    border-color: #{$hex} !important;
+    -webkit-box-shadow: 0px 0px 2px #{$hex}, inset 0px 0px 2px #{$hex};
+    box-shadow: 0px 0px 2px #{$hex}, inset 0px 0px 2px #{$hex};
+  }
 }
 
-.moderate .outline {
-  border-color: orange !important;
-  -webkit-box-shadow: 0px 0px 2px orange, inset 0px 0px 2px orange;
-  box-shadow: 0px 0px 2px orange, inset 0px 0px 2px orange;
+tbody tr:hover {
+  background-color: transparent !important;
 }
 
-.severe .outline {
-  border-color: #f6412d !important;
-  -webkit-box-shadow: 0px 0px 2px #f6412d, inset 0px 0px 2px #f6412d;
-  box-shadow: 0px 0px 2px #f6412d, inset 0px 0px 2px #f6412d;
+th:first-child,
+td:first-child {
+  padding-left: 0px !important;
+}
+
+th:last-child,
+td:last-child {
+  padding-right: 0px !important;
 }
 
 @media only screen and (max-width: $SMALL) {
