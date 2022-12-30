@@ -1,12 +1,9 @@
 <template>
   <outcomes-research-wrapper :_title="`NOSE HHT Questionnaire`">
     <v-app>
+      <outcomes-navbar />
       <Questionnaire />
-      <v-footer :padless="true">
-        <v-card flat tile width="100%" class="text-center">
-          <v-card-text>{{ t(k.FOOTER_COPYWRIGHT) }}</v-card-text>
-        </v-card>
-      </v-footer>
+      <outcomes-footer :copyright="t(k.FOOTER_COPYRIGHT)" />
     </v-app>
   </outcomes-research-wrapper>
 </template>

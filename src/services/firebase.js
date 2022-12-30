@@ -16,9 +16,9 @@ import store from './store';
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: process.env.FIREBASE_API_KEY,
+  apiKey: process.env.VUE_APP_FIREBASE_API_KEY,
   authDomain: 'nose-hht.firebaseapp.com',
-  databaseURL: 'https://nose-hht-default-rtdb.firebaseio.com',
+  databaseURL: process.env.VUE_APP_FIREBASE_URL,
   projectId: 'nose-hht',
   storageBucket: 'nose-hht.appspot.com',
   messagingSenderId: '467271543029',
@@ -26,7 +26,6 @@ const firebaseConfig = {
   measurementId: 'G-8S26EB0GEY',
 };
 
-const VUE_APP_FB_PASSWORD = 'password';
 let listeners = [];
 
 function ref(...args) {
@@ -43,7 +42,7 @@ const app = initializeApp(firebaseConfig);
  */
 export async function logIn(email, actionOnSuccess) {
   const auth = getAuth();
-  return signInWithEmailAndPassword(auth, email, VUE_APP_FB_PASSWORD)
+  return signInWithEmailAndPassword(auth, email, process.env.VUE_APP_PASSWORD)
     .then((loginRepsonse) => {
       return getUserData(loginRepsonse.user.uid, actionOnSuccess);
     })
@@ -82,7 +81,7 @@ export function getUserData(uid, actionOnSuccess) {
 export async function signUp(email) {
   return new Promise((r, j) => {
     const auth = getAuth();
-    createUserWithEmailAndPassword(auth, email, VUE_APP_FB_PASSWORD)
+    createUserWithEmailAndPassword(auth, email, process.env.VUE_APP_PASSWORD)
       .then(({ user }) => {
         // Signed in
         const db = getDatabase(app);

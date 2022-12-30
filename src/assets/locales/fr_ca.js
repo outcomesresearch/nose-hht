@@ -3,8 +3,8 @@ import { fr } from 'vuetify/lib/locale/';
 
 export default {
   ...fr, // existing vuetify translation entries
-  [keys.FOOTER_COPYWRIGHT]:
-    'NOSE HHT Copyright 2020 Washington University School of Medicine, St. Louis, Missouri',
+  [keys.FOOTER_COPYRIGHT]:
+    'NOSE HHT Copyright © 2020 Washington University School of Medicine, St. Louis, Missouri',
   [keys.INTERPRETATION_MILD]: 'Léger',
   [keys.INTERPRETATION_MODERATE]: 'Modéré',
   [keys.INTERPRETATION_SEVERE]: 'Sévère',
