@@ -27,7 +27,7 @@ jobs:
         run: |
           ls -la
           npm install
-          npm run build
+          VUE_APP_PASSWORD=${{ secrets.VUE_APP_PASSWORD }} VUE_APP_FIREBASE_URL=${{ secrets.VUE_APP_FIREBASE_URL }} VUE_APP_FIREBASE_API_KEY=${{ secrets.VUE_APP_FIREBASE_API_KEY }} npm run build
           ls -la
 
       - name: Deploy 🚀
