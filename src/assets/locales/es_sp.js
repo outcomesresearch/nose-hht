@@ -86,6 +86,11 @@ export default {
   [keys.SECTION3_PROMPT_9]: 'La necesidad de comprar ropa nueva',
 
   [keys.LOAD_PAST_SCORES]: 'Ver puntuaciones pasadas',
+  [keys.EMAIL_DISCLAIMER_1]:
+    'Washington University School of Medicine utiliza esta dirección de correo electrónico como identificador para almacenar sus puntajes anteriores de NOSE-HHT generados por este cuestionario en línea.',
+  [keys.EMAIL_DISCLAIMER_2]:
+    'Esta dirección de correo electrónico no se utiliza para publicitar, comercializar o contactarlo de otra manera, y solo sirve como una identificación para vincular sus puntajes anteriores y recuperarlos aquí.',
+
   [keys.AUTHENTICATE_YOURSELF]: 'Iniciar sesión con dirección de email',
   [keys.CLOSE]: 'Cerrar',
   [keys.BACK]: 'Atrás',

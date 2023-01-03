@@ -87,6 +87,11 @@ export default {
   [keys.SECTION3_PROMPT_9]: 'Necessità di comprare vestiti nuovi',
 
   [keys.LOAD_PAST_SCORES]: 'Visualizza i punteggi passati',
+  [keys.EMAIL_DISCLAIMER_1]:
+    'La Washington University School of Medicine utilizza questo indirizzo e-mail come identificatore per memorizzare i tuoi precedenti punteggi NOSE-HHT generati da questo questionario online.',
+  [keys.EMAIL_DISCLAIMER_2]:
+    'Questo indirizzo e-mail non viene utilizzato per pubblicizzarti, commercializzarti o contattarti in altro modo e serve solo come ID con cui collegare i tuoi punteggi passati insieme e recuperarli qui.',
+
   [keys.AUTHENTICATE_YOURSELF]: "Accedi con l'indirizzo e-mail",
   [keys.CLOSE]: 'Chiudi',
   [keys.BACK]: 'Indietro',
@@ -94,7 +99,7 @@ export default {
   [keys.USE_EXISTING]: 'Accedi',
   [keys.SUBMIT]: 'Invia',
   [keys.IMPROPER_EMAIL]: "L'indirizzo e-mail non è valido",
-  [keys.EMAIL_REQUIRED]: "E-mail obbligatorio",
+  [keys.EMAIL_REQUIRED]: 'E-mail obbligatorio',
 
   [keys.RESULTS_TITLE]: 'I punteggi passati di NOSE HHT per ',
   [keys.NO_DATA_AVAILABLE]: 'Nessun dato disponibile per questa email.',

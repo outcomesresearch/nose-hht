@@ -86,6 +86,11 @@ export default {
   [keys.SECTION3_PROMPT_9]: 'De noodzaak om nieuwe kleding te kopen',
 
   [keys.LOAD_PAST_SCORES]: 'Eerdere scores bekijken',
+  [keys.EMAIL_DISCLAIMER_1]:
+    'Washington University School of Medicine gebruikt dit e-mailadres als identificatiemiddel om uw eerdere NOSE-HHT-scores op te slaan die door deze online vragenlijst zijn gegenereerd.',
+  [keys.EMAIL_DISCLAIMER_2]:
+    'Dit e-mailadres wordt niet gebruikt om te adverteren, op de markt te brengen of anderszins contact met u op te nemen, en dient alleen als ID om uw eerdere scores aan elkaar te koppelen en ze hier op te halen.',
+
   [keys.AUTHENTICATE_YOURSELF]: 'Inloggen met e-mail',
   [keys.CLOSE]: 'Sluiten',
   [keys.BACK]: 'Terug',

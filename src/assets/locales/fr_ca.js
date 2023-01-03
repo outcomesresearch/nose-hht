@@ -87,6 +87,11 @@ export default {
   [keys.SECTION3_PROMPT_9]: 'Le besoin d’acheter de nouveaux vêtements',
 
   [keys.LOAD_PAST_SCORES]: 'Voir les scores passés',
+  [keys.EMAIL_DISCLAIMER_1]:
+    'La Washington University School of Medicine utilise cette adresse e-mail comme identifiant pour stocker vos scores NOSE-HHT passés générés par ce questionnaire en ligne.',
+  [keys.EMAIL_DISCLAIMER_2]:
+    "Cette adresse e-mail n'est pas utilisée pour faire de la publicité, vous commercialiser ou vous contacter d'une autre manière, et sert uniquement d'identifiant permettant de lier vos scores passés et de les récupérer ici.",
+
   [keys.AUTHENTICATE_YOURSELF]: "Connectez-vous avec l'adresse e-mail",
   [keys.CLOSE]: 'Fermer',
   [keys.BACK]: 'Retour',
@@ -94,7 +99,7 @@ export default {
   [keys.USE_EXISTING]: 'Se connecter',
   [keys.SUBMIT]: 'Envoyer',
   [keys.IMPROPER_EMAIL]: "Le format de l'adresse e-mail n'est pas valide",
-  [keys.EMAIL_REQUIRED]: "Une adresse e-mail est requise",
+  [keys.EMAIL_REQUIRED]: 'Une adresse e-mail est requise',
 
   [keys.RESULTS_TITLE]: 'Scores NOSE HHT passés pour ',
   [keys.NO_DATA_AVAILABLE]: 'Aucune donnée disponible pour cet e-mail.',
