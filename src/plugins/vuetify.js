@@ -8,7 +8,7 @@ Vue.use(Vuetify);
 const opts = {
   lang: {
     locales,
-    current: 'en-US',
+    current: navigator.language,
   },
   theme: {
     themes: {

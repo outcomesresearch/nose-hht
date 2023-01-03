@@ -83,8 +83,12 @@ export default {
   },
   computed: {
     availableCountries() {
+      // If user hasnt selected a language yet,
+      // fallback to default navigator setting as "one-to-exclude from the list"
       return countries.filter(({ name }) =>
-        this.selected === null ? name !== 'en-US' : this.selected.name !== name,
+        this.selected === null
+          ? name !== navigator.language
+          : name !== this.selected.name,
       );
     },
   },
