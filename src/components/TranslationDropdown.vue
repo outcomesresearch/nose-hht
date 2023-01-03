@@ -31,38 +31,38 @@ import dateTimeLocales from '../assets/dateTimeLocales/';
 
 const countries = [
   {
-    name: 'en_us',
+    name: 'en-US',
     locale: 'English',
     flag: 'em-flag-us',
     abbr: 'EN',
   },
   {
-    name: 'es_us',
+    name: 'es-US',
     locale: 'Español',
     flag: 'em-flag-us',
     abbr: 'ES',
   },
   {
-    name: 'es_sp',
+    name: 'es-ES',
     locale: 'Español',
     flag: 'em-flag-es',
     abbr: 'ES',
   },
 
   {
-    name: 'nl_nl',
+    name: 'nl-NL',
     locale: 'Nederlands',
     flag: 'em-flag-nl',
     abbr: 'NL',
   },
   {
-    name: 'it_it',
+    name: 'it-IT',
     locale: 'Italiano',
     flag: 'em-flag-it',
     abbr: 'IT',
   },
   {
-    name: 'fr_ca',
+    name: 'fr-CA',
     locale: 'Français',
     flag: 'em-flag-ca',
     abbr: 'FR',
@@ -84,7 +84,7 @@ export default {
   computed: {
     availableCountries() {
       return countries.filter(({ name }) =>
-        this.selected === null ? name !== 'en_us' : this.selected.name !== name,
+        this.selected === null ? name !== 'en-US' : this.selected.name !== name,
       );
     },
   },

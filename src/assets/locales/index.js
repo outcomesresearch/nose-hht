@@ -6,10 +6,10 @@ import it_it from './it_it';
 import fr_ca from './fr_ca';
 
 export default {
-  en_us,
-  es_us,
-  es_sp,
-  nl_nl,
-  it_it,
-  fr_ca,
+  'en-US': en_us,
+  'es-US': es_us,
+  'es-ES': es_sp,
+  'nl-NL': nl_nl,
+  'it-IT': it_it,
+  'fr-CA': fr_ca,
 };

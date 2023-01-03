@@ -15,6 +15,6 @@ new Vue({
   store,
   render: (h) => h(App),
   mounted() {
-    this.$vuetify.lang.defaultLocale = 'en_us';
+    this.$vuetify.lang.defaultLocale = 'en-US';
   },
 }).$mount('#app-entry');
