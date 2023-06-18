@@ -123,4 +123,6 @@ export default {
   [keys.INTERPRETATION_TITLE]: 'Scoren en Interpretatie van NEUS-HHT',
   [keys.BASED_ON_AVERAGE]: 'Op basis van gemiddelde score',
   [keys.BASED_ON_SUM]: 'Op basis van somscore',
+
+  [keys.PRINT]: 'Afdrukken',
 };

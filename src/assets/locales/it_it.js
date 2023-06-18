@@ -124,4 +124,6 @@ export default {
   [keys.INTERPRETATION_TITLE]: 'Punteggio e interpretazione del NOSE HHT',
   [keys.BASED_ON_AVERAGE]: 'In base al punteggio medio',
   [keys.BASED_ON_SUM]: 'in base al punteggio totale',
+
+  [keys.PRINT]: 'Stampa',
 };

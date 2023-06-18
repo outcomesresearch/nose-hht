@@ -121,4 +121,6 @@ export default {
 
   [keys.BASED_ON_AVERAGE]: 'Based on average',
   [keys.BASED_ON_SUM]: 'Based on sum',
+
+  [keys.PRINT]: 'Print',
 };

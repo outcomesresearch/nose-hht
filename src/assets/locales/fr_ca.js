@@ -124,4 +124,6 @@ export default {
   [keys.INTERPRETATION_TITLE]: 'Interprétation et notation du score Nose-HHT',
   [keys.BASED_ON_AVERAGE]: 'Basé sur le score moyen',
   [keys.BASED_ON_SUM]: 'Basé sur le score total',
+
+  [keys.PRINT]: 'Imprimer',
 };

@@ -107,4 +107,6 @@ export default {
   INTERPRETATION_TITLE: 'title of interpretation table',
   BASED_ON_SUM: 'title of sum column',
   BASED_ON_AVERAGE: 'title of average column',
+
+  PRINT: 'button label for printing',
 };

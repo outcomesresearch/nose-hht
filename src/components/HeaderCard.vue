@@ -2,8 +2,15 @@
   <v-card class="mb-12">
     <v-card-title>
       <div class="flow">
-        <span class="flow-around ml-3 mb-3"><TranslationDropdown /></span
-        >{{ t(k.HEADER_TITLE) }}
+        <div class="buttons">
+          <span class="flow-around fixed-width ml-3 mb-3">
+            <TranslationDropdown />
+          </span>
+          <span class="flow-around ml-3 mb-3">
+            <PrintButton />
+          </span>
+        </div>
+        {{ t(k.HEADER_TITLE) }}
       </div>
     </v-card-title>
     <v-card-text>
@@ -20,15 +27,30 @@
 
 <script>
 import TranslationDropdown from './TranslationDropdown.vue';
+import PrintButton from './PrintButton.vue';
 
 export default {
-  components: { TranslationDropdown },
+  components: { TranslationDropdown, PrintButton },
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+@import '../assets/scss/breakpoints.scss';
 .flow-around {
   float: right;
+}
+
+.fixed-width {
   width: 82px;
+}
+
+@media only screen and (max-width: $SMALL) {
+  .buttons {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    width: min-content;
+    float: right;
+    justify-items: right;
+  }
 }
 </style>
